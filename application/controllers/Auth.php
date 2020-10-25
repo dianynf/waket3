@@ -8,6 +8,7 @@ class Auth extends CI_Controller
 		parent::__construct();
 		$this->load->library('form_validation');
 		//$this->load->library('googleplus');
+		//$this->load->library('googleplus');
 	}
 
 	public function index()
@@ -53,7 +54,7 @@ class Auth extends CI_Controller
 					if ($user['role_id'] == 1) { // mengambil data dari baris 38
 						redirect('dashboard');
 					} else {
-						redirect('dashboard'); //arahkan ke controller user   
+						redirect('dashboard'); //arahkan ke controller user
 					}
 				} else {
 					//cek apakah password benar!
@@ -103,9 +104,9 @@ class Auth extends CI_Controller
 				'is_active' => 0,
 				'date_created' => time()
 			];
-			// siapkan token 
+			// siapkan token
 			$token = base64_encode(random_bytes(32));
-			//mengambil data dari 91        
+			//mengambil data dari 91
 			$user_token = [
 				'email' => $email,
 				'token' => $token,
@@ -246,9 +247,9 @@ class Auth extends CI_Controller
 
 			//cek lagi apakah user ada
 			if ($user) {
-				// siapkan token 
+				// siapkan token
 				$token = base64_encode(random_bytes(32));
-				//mengambil data dari 91        
+				//mengambil data dari 91
 				$user_token = [
 					'email' => $email,
 					'token' => $token,
